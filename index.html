@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Retail Customer Shopping Behavior Analysis</title>
+
+<link rel="stylesheet" href="styles.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+<h2>Simamnkele Mlisana</h2>
+
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#problem">Problem</a></li>
+<li><a href="#pipeline">Pipeline</a></li>
+<li><a href="#analysis">Analysis</a></li>
+<li><a href="#dashboard">Dashboard</a></li>
+<li><a href="#downloads">Downloads</a></li>
+</ul>
+
+</nav>
+
+<header class="hero">
+
+<div class="hero-content">
+
+<h1>Customer Shopping Behavior Analysis</h1>
+
+<p>
+End-to-End Data Analytics Project using Python, PostgreSQL and Power BI
+</p>
+
+<div class="hero-buttons">
+
+<a href="#overview" class="btn-primary">Explore Project</a>
+
+<a href="Customer_Shopping_Behaviour_Analysis.ipynb" class="btn-secondary" download>
+Download Notebook
+</a>
+
+</div>
+
+</div>
+
+</header>
+
+<section id="overview" class="section">
+
+<h2>Project Overview</h2>
+
+<p>
+This project analyzes customer shopping behavior using transactional retail data to identify
+spending patterns, customer segments, and product performance.
+</p>
+
+<p>
+The goal is to transform raw data into actionable business insights that can improve
+marketing strategy, customer retention, and revenue generation.
+</p>
+
+<div class="tech-stack">
+
+<div class="tech">
+<h3>Python</h3>
+<p>EDA, cleaning, feature engineering</p>
+</div>
+
+<div class="tech">
+<h3>PostgreSQL</h3>
+<p>Business analysis queries</p>
+</div>
+
+<div class="tech">
+<h3>Power BI</h3>
+<p>Interactive dashboard visualization</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="problem" class="section alt">
+
+<h2>Business Problem</h2>
+
+<p>
+A retail company wants to better understand its customers’ shopping behavior
+in order to improve sales, customer satisfaction, and long-term loyalty.
+</p>
+
+<div class="highlight">
+
+How can the company leverage customer shopping data to identify trends,
+improve engagement, and optimize marketing strategies?
+
+</div>
+
+</section>
+
+<section id="pipeline" class="section">
+
+<h2>Data Pipeline</h2>
+
+<div class="pipeline">
+
+<div class="step">
+<h3>Data Collection</h3>
+<p>Retail dataset containing 3900 purchase transactions.</p>
+</div>
+
+<div class="step">
+<h3>Data Cleaning</h3>
+<p>Handled missing values and standardized columns using Python.</p>
+</div>
+
+<div class="step">
+<h3>Feature Engineering</h3>
+<p>Created age groups and purchase frequency metrics.</p>
+</div>
+
+<div class="step">
+<h3>Database Storage</h3>
+<p>Loaded cleaned dataset into PostgreSQL.</p>
+</div>
+
+<div class="step">
+<h3>Visualization</h3>
+<p>Built Power BI dashboard to present insights.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="analysis" class="section alt">
+
+<h2>Exploratory Data Analysis</h2>
+
+<p>
+Python and Pandas were used to explore and clean the dataset.
+</p>
+
+<h3>Example Python Code</h3>
+
+<pre>
+import pandas as pd
+
+df = pd.read_csv("shopping_data.csv")
+
+df["age_group"] = pd.cut(
+df["age"],
+bins=[18,25,35,45,60,100],
+labels=["18-25","26-35","36-45","46-60","60+"]
+)
+
+df.fillna(df["review_rating"].median(), inplace=True)
+</pre>
+
+<h3>Example SQL Query</h3>
+
+<pre>
+SELECT category,
+SUM(purchase_amount) AS total_revenue
+FROM shopping_transactions
+GROUP BY category
+ORDER BY total_revenue DESC;
+</pre>
+
+</section>
+
+<section id="dashboard" class="section">
+
+<h2>Power BI Dashboard</h2>
+
+<p>
+The dashboard allows stakeholders to explore revenue trends,
+customer segments, and product performance interactively.
+</p>
+
+<img src="dashboard.png" class="dashboard">
+
+</section>
+
+<section id="downloads" class="section alt">
+
+<h2>Project Resources</h2>
+
+<p>
+All project files are available for download below.
+</p>
+
+<div class="download-grid">
+
+<a href="Customer_Shopping_Behaviour_Analysis.ipynb" class="download-card" download>
+📓 Python Analysis Notebook
+</a>
+
+<a href="customer_behavior_sql_queries.sql" class="download-card" download>
+🗄 SQL Analysis Queries
+</a>
+
+<a href="Customer-Shopping-Behavior-Analysis.pptx" class="download-card" download>
+📊 Project Presentation
+</a>
+
+<a href="Retail Business Problem Document.pdf" class="download-card" download>
+📄 Business Problem Statement
+</a>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>© 2026 Simamnkele Mlisana | Data Analytics Project</p>
+
+</footer>
+
+</body>
+</html>
